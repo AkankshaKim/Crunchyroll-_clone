@@ -1,0 +1,219 @@
+body {
+    background-color: black;
+}
+h1 {
+    color: orange;
+}
+h2 {
+    color:white;
+}
+p {
+    color: white;
+    font-size: 20px;
+    margin-left: 150px;
+}
+h3 {
+    color: white;
+    font-size: 23px;
+    margin-left: 38px;
+}
+h4 {
+    color: white;
+}
+.heading {
+    color: white;
+    margin-left: 150px;
+}
+.news-heading {
+    color: white;
+    margin-left: 38px;
+}
+.hr-blue {
+    height: 5px;
+    width: 1030px;
+    background-color: aqua;
+    margin-left: 150px;
+}
+.hr-orenge {
+    height: 5px;
+    width: 1030px;
+    background-color:orange;
+    margin-left: 150px;
+}
+.hr-orenge-news-box {
+    background-color: orangered;
+    height: 5px;
+    width: 1045px;
+    margin-left: 40px;
+}
+.background {
+    display: flex;
+    flex-wrap: wrap;
+    color: orangered;
+    background-image: linear-gradient( orangered,yellow);
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+}
+.slides {
+    margin-top: 2%;
+    margin-left: 28%;
+    height: 350px;
+    width: 620px;
+    background-color: gray;
+    /* transform: translate(-50%, -50%);
+    background-image: url(../images/Death-Note.webp);
+    background-size: 100% 100%;
+    animation: slider 9s infinite linear; */
+}
+@keyframes slider {
+    0%{
+        background-image: url(../images/Death-Note.webp);
+    }
+    35%{
+        background-image: url(../images/demon-slayer.jpg);
+    }
+    75%{
+        background-image: url(../images/spy-x-family.jpg);
+    }
+}
+.title {
+    display: flex;
+    gap: 35px;
+    margin-left: 30px;
+    font-family: 'Franklin Gothic Medium';
+    font-size: 15px;
+}
+.title-icons {
+    position: relative;
+    display: flex;
+    height: 50px;
+    width: 50px;
+    color: white;
+}
+.animes {
+    display: flex;
+    gap: 10px;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+.anime {
+    flex: 1;
+    margin-top: 20px;
+    height: 50px;
+    width: 100px;
+    background-color:rgb(57, 50, 50);
+    text-align: center;
+    color: aliceblue;
+}
+.new_anime {
+    display: flex;
+    gap: 10px;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+.new_animes {
+    flex: 1;
+    height: 200px;
+    width: 100px;
+    background-color: rgb(79, 18, 55);
+}
+.hindi_dub {
+    display: flex;
+    gap: 10px;
+    padding-left: 150px;
+    padding-right: 150px;
+    
+}
+.hindi_dubs{
+    flex: 1;
+    height: 200px;
+    width: 100px;
+    background-color: rgb(79, 18, 55);
+}
+/* @media only screen and (max-width:700px) {
+    body {background-color: red;}
+}    */
+.Crunchyroll-news {
+    height: 800px;
+    width: 100%;
+    color: orangered;
+    background-image: linear-gradient(to bottom right, orangered,yellow);
+    margin-top: 150px;
+}
+.Crunchyroll-news-inbox {
+    position: absolute;
+    height: 730px;
+    width: 83%;
+    background-color: black;
+    margin-left: 110px;
+    margin-top: 30px;
+}
+/* death parade */
+.text {
+    position: absolute;
+    text-align:justify;
+    font-size: 18px; 
+    padding-right:810px;
+    padding-top: 13%;
+}
+.death-parade-img {
+    height: 180px;
+    width: 130px;
+    margin-left: 40px;
+}
+.death-parade-div { 
+    position: absolute;
+    height: 150px;
+    width: 270px;
+    /* margin-left:40px; */
+    /* bottom: 120px; */
+    background-color: cornflowerblue;
+}
+/* wecome to demon school */
+.iruma-div {
+    position: absolute;
+    height: 150px;
+    width: 270px;
+    background-color: cornflowerblue;
+    margin-left:40px; 
+    bottom: 170px;
+}
+.text-iruma {
+    position: absolute;
+    margin-left: 40px;
+    padding-right: 810px;
+    bottom: 10px;
+    font-size: 18px;
+}
+/* another */
+.another-div {
+    position: absolute;
+    height:70px;
+    width: 130px;
+    margin-left:40px; 
+    bottom: 170px;
+    background-color: palevioletred;
+}
+.another-text{
+    text-align:justify;
+    font-size: 18px; 
+    margin-left:5%;
+    overflow: hidden;
+}
+.another-box {
+    display: flex;
+    padding-left: 200px;
+    padding-right: 50px;
+    flex-direction: column;
+    gap: 10px;
+}
+.death-parade-x-another {
+    display: flex;
+}
+.last-page {
+    display: flex;
+}
+.last-page-box {
+    font-size: 25px;
+}

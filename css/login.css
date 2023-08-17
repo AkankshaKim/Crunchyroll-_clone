@@ -1,0 +1,186 @@
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box; 
+    }
+    body{
+        background-image: url(../images/png-clipart-black-crystal-illustration-light-desktop-blue-black-cyan-black-background-purple-blue.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    p{
+        color: rgb(216, 212, 212);
+        margin-left: 580px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    n{
+        color: rgb(216, 212, 212);
+        margin-left: 630px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    h4{
+        color: orangered;
+    }
+    h5{
+        color: white;
+        margin-top: 10px;
+    }
+    /* headings */
+    h2{
+        margin-left: 46%;
+        margin-top: 4%;
+        color: aliceblue;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+        font-size: 35px;
+    }
+    .Crunchyroll_title{
+        height: 70px;
+        width: 100%;
+        background-color: rgb(24, 22, 22);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center ;
+        color: orangered;
+    }
+    /* hr */
+    .hr{
+        display: flex;
+        margin-left: 20%;
+    }
+    .phone_hr{
+        height: 5px;
+        width: 150px;
+        background-color: orangered;
+
+    }
+    .emali_hr{
+        height: 2px;
+        width: 150px;
+        background-color: gray;
+    }
+    .phone_hr1{
+        height: 2px;
+        width: 150px;
+        background-color: gray;
+
+    }
+    .emali_hr1{
+        height: 5px;
+        width: 150px;
+        background-color: orangered;
+    }
+    .phone_number_hr{
+        position: absolute;
+        height: 3px;
+        width: 420px;
+        background-color: gray;
+    }
+    /* ids */
+    #login_black_box{
+        flex: 1;
+        height: 260px;
+        width: 530px;
+        margin-left: 31.5%;
+        margin-top: 2.1%;
+        background-color: rgb(24, 22, 22);
+    }
+    #email_black_box{
+        flex: 1;
+        height: 360px;
+        width: 530px;
+        margin-left: 31.5%;
+        margin-top: 2.1%;
+        background-color: rgb(24, 22, 22);
+    }
+    #Crunchyroll_girl{
+        position: absolute;
+        background-repeat: no-repeat;
+        height: 540px;
+        margin-left: 21%;
+        bottom: 4%;
+    }
+    #phone{
+        height: 70px;
+        width: 70px;
+        background-color:transparent;
+        border: transparent;
+        color: white;
+        font-size: 17px;
+    }
+    #yuzu{
+        position: absolute;
+        margin-left: 67%;
+        bottom: 20px;
+    }
+    #yuzuemail{
+        position: absolute;
+        margin-left:67% ;
+        bottom: 30px;
+    }
+    #number{
+        background-color: transparent;
+        border: transparent;
+        color: white;
+        width: 100%;
+        height: 48px;
+    }
+    #username{
+        background-color: transparent;
+        border: transparent;
+        color: white;
+        height: 50px;
+        width: 100%;
+        margin-top: 10px;
+        font-size: 20px ;
+    }
+    #password{
+        background-color: transparent;
+        border: transparent;
+        color: white;
+        width: 100%;
+        height: 60px;
+        width: 100%;
+        margin-top: 10px;
+        font-size: 20px ;
+    }
+    #btn{
+        background-color: orangered;
+        border: orangered;
+        font-size: 15px;
+        height: 40px;
+        width: 130px;
+        margin-left: 680px;
+        margin-top: 20px;
+    }
+    /* classes */
+    .Contact{
+        display: flex;
+        gap: 15%;
+        justify-content: center;
+        padding-top: 10%;
+    }
+    .maxdiv{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .phone_number{
+        height: 200px;
+        font-size: 15px;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-top: 20px;
+        color: gray;
+    }
+    .ac{
+        color: white;
+    }
+    /* flex */
+    .no_ac{
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        margin-left: 640px;
+        margin-top: 20px;
+    }
