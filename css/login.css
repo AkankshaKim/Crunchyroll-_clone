@@ -10,13 +10,13 @@
     }
     p{
         color: rgb(216, 212, 212);
-        margin-left: 580px;
+        margin-left: 530px;
         font-size: 15px;
         margin-top: 20px;
     }
     n{
         color: rgb(216, 212, 212);
-        margin-left: 630px;
+        margin-left: 580px;
         font-size: 15px;
         margin-top: 20px;
     }
@@ -90,14 +90,14 @@
         height: 360px;
         width: 530px;
         margin-left: 31.5%;
-        margin-top: 2.1%;
+        margin-top: 1%;
         background-color: rgb(24, 22, 22);
     }
     #Crunchyroll_girl{
         position: absolute;
         background-repeat: no-repeat;
-        height: 540px;
-        margin-left: 21%;
+        height: 490px;
+        margin-left: 21.3%;
         bottom: 4%;
     }
     #phone{
@@ -115,7 +115,7 @@
     }
     #yuzuemail{
         position: absolute;
-        margin-left:67% ;
+        margin-left:15% ;
         bottom: 30px;
     }
     #number{
@@ -150,7 +150,7 @@
         font-size: 15px;
         height: 40px;
         width: 130px;
-        margin-left: 680px;
+        margin-left: 620px;
         margin-top: 20px;
     }
     /* classes */
@@ -181,6 +181,6 @@
         display: flex;
         flex-direction: row;
         gap: 5px;
-        margin-left: 640px;
+        margin-left: 580px;
         margin-top: 20px;
     }

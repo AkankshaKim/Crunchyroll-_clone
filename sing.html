@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crunchyroll_login_page</title>
     <link rel="stylesheet" href="css/login.css">
-    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/sing.js"></script>
 </head>
 <body>
     <div class="Crunchyroll_title">
@@ -13,7 +13,7 @@
     </div> 
     <div class="maxdiv">
         <div class="log">
-            <h2>log in</h2>                                                                                        
+            <h2>Sing Up</h2>                                                                                        
         </div>
         <div class="login_box">    
         <img id="Crunchyroll_girl" src="images/log-in-hime.png">  
@@ -33,18 +33,11 @@
                     <div class="phone_number_hr"></div>
                     <input id="password" placeholder="Password" type="password">
                     <div class="phone_number_hr"></div>
-                    <h5>FORGOT PASSWORD?</h5>
                 </div>    
             </div> 
         </div>
     </div>    
-        <button id="btn" type="submit">LOG IN</button>
-    <div class="no_ac">
-        <a href="sing.html">
-        <h4 class="ac">No Account?<h4>
-        </a>
-        <h4>CREATE ONE</h4>
-    </div>
+        <button id="btn" onclick="checkinfo()" type="submit">SING UP</button>
         <img id="yuzuemail" src="images/log-in-yuzu.png">
 </body>
 </html>
