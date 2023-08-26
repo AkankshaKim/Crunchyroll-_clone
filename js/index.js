@@ -20,20 +20,26 @@ const app = initializeApp(firebaseConfig);
 
 const siginbtn = document.getElementById("siginbtn");
 
-siginbtn.addEventListener("click",()=>{
-  createuser();
-});
-
-const btn = document.getElementById("btn");
-
-btn.addEventListener("click",()=>{
-    checkuser();
-});
 
 
+const loginbtn = document.getElementById("login");
+try{
+  loginbtn.addEventListener("click",()=>{
+      checkuser();
+      
+  });
+}
+catch(e){
+  siginbtn.addEventListener("click",()=>{
+    createuser();
+  });
+}
 
 
-function checkuser(){
+
+
+
+const checkuser = ()=>{
     var email = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     const auth = getAuth();
@@ -45,12 +51,21 @@ function checkuser(){
   }).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    alert("check your email or password")
+    if(errorCode == "auth/network-request-failed")
+    {
+      alert("check your internet connection");
+    }
+    else
+    {
+      alert("check your email or password");
+
+    }
+    
   });
 }
 
 
-function createuser() {
+const createuser = ()=>{
   const auth = getAuth();
   var email = document.getElementById("username").value;
   var password = document.getElementById("password").value;
@@ -62,7 +77,14 @@ function createuser() {
   }).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    alert("something went wrong please try again");
+    if(errorCode == "auth/email-already-in-use")
+    {
+      alert("useralready exists");
+    }
+    else if(errorCode == "auth/network-request-failed")
+    {
+      alert("check your internet connection");
+    }
     // ..
   });
 }
