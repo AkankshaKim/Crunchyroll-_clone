@@ -9,7 +9,8 @@ try{
   loginbtn.addEventListener("click",()=>{
     var email = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    nt.checkuser(email,password);
+    var status =  nt.checkuser(email,password);
+    location.replace("../index.html")
       
   });
 }

@@ -1,6 +1,6 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js";
 
 class networking{
     constructor()
@@ -18,11 +18,14 @@ class networking{
         this.auth = getAuth();
     }
 
-    checkuser = (email, password)=>{
+    checkuser = async (email, password)=>{
+        var userloginstatus = false;
         signInWithEmailAndPassword(this.auth, email, password).then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
+        // console.log(user)
         alert("everthing good");
+
         // ...
       }).catch((error) => {
         const errorCode = error.code;
