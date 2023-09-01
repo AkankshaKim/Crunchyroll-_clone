@@ -18,14 +18,12 @@ class networking{
         this.auth = getAuth();
     }
 
-    checkuser = async (email, password)=>{
-        var userloginstatus = false;
+    checkuser = (email, password)=>{
         signInWithEmailAndPassword(this.auth, email, password).then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        // console.log(user)
+        // console.log(user);
         alert("everthing good");
-
         // ...
       }).catch((error) => {
         const errorCode = error.code;
@@ -63,6 +61,21 @@ class networking{
           // ..
         });
       }
+
+    userstatus = (user) =>{
+      return new Promise((ressolve,reject) => {
+        if(user)
+        {
+          ressolve({ loggIn:true , user: user});
+        }
+        else
+        {
+          ressolve({loggIn:false, user:user});
+        }
+      });
+    }
+
+
 }
 
 
