@@ -1,4 +1,4 @@
-import { networking } from "./networking.js";
+import { networking,database } from "./networking.js";
 
 const nt = new networking();
 
@@ -19,6 +19,8 @@ catch(e){
   siginbtn.addEventListener("click",()=>{
     var email = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    nt.createuser(email,password);
+    // nt.createuser(email,password);
+    const db = new database();
+    db.fetchdata();
   });
 }

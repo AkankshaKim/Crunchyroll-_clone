@@ -1,13 +1,17 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js";
+import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-database.js";
 
-class networking{
-    constructor()
+
+class authentication
+{
+  constructor()
     {
         this.appconfig = {
             apiKey: "AIzaSyC7PqXixX7SlpOwzLNPOzy4Rm-HvBmHSl8",
             authDomain: "crunchyroll-clone-c8501.firebaseapp.com",
+            databaseURL: "https://crunchyroll-clone-c8501-default-rtdb.asia-southeast1.firebasedatabase.app",
             projectId: "crunchyroll-clone-c8501",
             storageBucket: "crunchyroll-clone-c8501.appspot.com",
             messagingSenderId: "938254019867",
@@ -75,8 +79,28 @@ class networking{
       });
     }
 
+}
+class database{
+  constructor()
+  {
+    this.dbRef = ref(getDatabase());
+  }
+  fetchdata = () =>
+  {
+    get(child(this.dbRef, `2OvQG81jAQdmpBdRhHOj7cnNPk82`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        console.log(snapshot.val());
+      } else {
+        console.log("No data available");
+      }
+    }).catch((error) => {
+      console.error(error);
+    })
+  }
+}
+class networking extends authentication{
 
 }
 
 
-export {networking};
+export {networking,database};
