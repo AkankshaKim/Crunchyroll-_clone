@@ -85,9 +85,9 @@ class database{
   {
     this.dbRef = ref(getDatabase());
   }
-  fetchdata = () =>
+  fetchdata = (name) =>
   {
-    get(child(this.dbRef, `2OvQG81jAQdmpBdRhHOj7cnNPk82`)).then((snapshot) => {
+    get(child(this.dbRef, name)).then((snapshot) => {
       if (snapshot.exists()) {
         console.log(snapshot.val());
       } else {
