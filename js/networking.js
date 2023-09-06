@@ -80,26 +80,34 @@ class authentication
     }
 
 }
-class database{
+class database extends authentication
+{
   constructor()
   {
+    super();
     this.dbRef = ref(getDatabase());
   }
   fetchdata = (name) =>
   {
-    get(child(this.dbRef, name)).then((snapshot) => {
-      if (snapshot.exists()) {
-        console.log(snapshot.val());
-      } else {
-        console.log("No data available");
-      }
-    }).catch((error) => {
-      console.error(error);
-    })
+    // var rname = "hello";
+    return new Promise((resolve, reject) =>{
+      get(child(this.dbRef, name)).then((snapshot) => {
+        if (snapshot.exists()) {
+          console.log(snapshot.val());
+          var value = snapshot.val();
+          resolve(value);
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error(error);
+        resolve(error);
+      });
+    });
   }
 }
-class networking extends authentication{
-
+class networking extends database
+{
 }
 
 

@@ -186,9 +186,13 @@ h4 {
     bottom: 10px;
     font-size: 18px;
 }
+
+.another{
+    display: flex;
+}
+
 /* another */
 .another-div {
-    position: absolute;
     height:70px;
     width: 130px;
     margin-left:40px; 
