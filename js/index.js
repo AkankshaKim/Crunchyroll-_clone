@@ -7,48 +7,58 @@ var currentpage = window.location.href;
 
 if (currentpage.endsWith("/index.html"))
 {
-  
-  var deathnote = document.getElementById("deathnote");
-  nt.fetchdata(`availabe_shows/Death_note/name`).then((result) => {
-    deathnote.innerHTML = result;
-  }).catch((error) => {
-    console.log(error)
+  const ids = ["deathnote","demonslayer","spyfamily","horimiya","onepiece","madesama"]
+  let animes = "";
+  for (let i=0; i<ids.length; i++){
+    animes += ids[i];
+  }
+  console.log(animes)
+  nt.fetchdata(`availabe_shows/name`).then((animes) =>{
+    console.log(animes)
+  document.getElementById("anime1").innerHTML = animes;
   });
-  // deathnote.innerHTML = 
-  var demonslayer = document.getElementById("demonslayer");
-  nt.fetchdata(`availabe_shows/Demon_Slayer/name`).then((result) => {
-    demonslayer.innerHTML = result;
-  }).catch((error) => {
-    console.log(error)
-  }); 
 
-  var spyfamily = document.getElementById("spyfamily");
-  nt.fetchdata(`availabe_shows/spy_family/name`).then((result) => {
-    spyfamily.innerHTML = result;
-  }).catch((error) => {
-    console.log(error)
-  }); 
+  // var deathnote = document.getElementById("deathnote");
+  // nt.fetchdata(`availabe_shows/Death_note/name`).then((result) => {
+  //   deathnote.innerHTML = result;
+  // }).catch((error) => {
+  //   console.log(error)
+  // });
+  // // deathnote.innerHTML = 
+  // var demonslayer = document.getElementById("demonslayer");
+  // nt.fetchdata(`availabe_shows/Demon_Slayer/name`).then((result) => {
+  //   demonslayer.innerHTML = result;
+  // }).catch((error) => {
+  //   console.log(error)
+  // }); 
 
-  var horimiya = document.getElementById("horimiya");
-  nt.fetchdata(`availabe_shows/horimiya/name`).then((result) => {
-    horimiya.innerHTML = result;
-  }).catch((error) => {
-    console.log(error)
-  }); 
+  // var spyfamily = document.getElementById("spyfamily");
+  // nt.fetchdata(`availabe_shows/spy_family/name`).then((result) => {
+  //   spyfamily.innerHTML = result;
+  // }).catch((error) => {
+  //   console.log(error)
+  // }); 
 
-  var onepiece = document.getElementById("onepiece");
-  nt.fetchdata(`availabe_shows/onepiece/name`).then((result) => {
-    onepiece.innerHTML = result;
-  }).catch((error) => {
-    console.log(error)
-  }); 
+  // var horimiya = document.getElementById("horimiya");
+  // nt.fetchdata(`availabe_shows/horimiya/name`).then((result) => {
+  //   horimiya.innerHTML = result;
+  // }).catch((error) => {
+  //   console.log(error)
+  // }); 
 
-  var madesama = document.getElementById("madesama");
-  nt.fetchdata(`availabe_shows/madesama/name`).then((result) => {
-    madesama.innerHTML = result;
-  }).catch((error) => {
-    console.log(error)
-  }); 
+  // var onepiece = document.getElementById("onepiece");
+  // nt.fetchdata(`availabe_shows/onepiece/name`).then((result) => {
+  //   onepiece.innerHTML = result;
+  // }).catch((error) => {
+  //   console.log(error)
+  // }); 
+
+  // var madesama = document.getElementById("madesama");
+  // nt.fetchdata(`availabe_shows/madesama/name`).then((result) => {
+  //   madesama.innerHTML = result;
+  // }).catch((error) => {
+  //   console.log(error)
+  // }); 
   // new arrival
 
   var a_silent_voice = document.getElementById("a_silent_voice");
@@ -135,6 +145,21 @@ if (currentpage.endsWith("/index.html"))
     console.log(error)
   });
 
+  // footer
+
+  var Navigation = document.getElementById("Navigation");
+  nt.fetchdata(`footer/Navigation/name`).then((result) => {
+    Navigation.innerHTML = result;
+  }).catch((error) => {
+    console.log(error)
+  });
+
+  var BrowsePopular  = document.getElementById("BrowsePopular");
+  nt.fetchdata(`footer/Navigation/name`).then((result) => {
+    BrowsePopular.innerHTML = result;
+  }).catch((error) => {
+    console.log(error)
+  });
 }
 
 else if(currentpage.endsWith("/login.html"))
