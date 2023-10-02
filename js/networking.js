@@ -1,7 +1,8 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
+import { initializeApp,getApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js";
 import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-database.js";
 
+import { getStorage } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-storage.js";
 
 class authentication
 {
@@ -92,17 +93,22 @@ class database extends authentication
     return new Promise((resolve, reject) =>{
       get(child(this.dbRef, name)).then((snapshot) => {
         if (snapshot.exists()) {
-          console.log(snapshot.val());
           var value = snapshot.val();
           resolve(value);
         } else {
-          console.log("No data available");
+          resolve("No data available");
         }
       }).catch((error) => {
         console.error(error);
         resolve(error);
       });
     });
+  }
+  storageget = ()=>{
+    // Initialize Cloud Storage and get a reference to the service
+    const storage = getStorage(this.initapp);
+    const storageref = ref(storage,"new_anime");
+    console.log(storageref);
   }
 }
 class networking extends database
