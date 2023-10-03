@@ -1,8 +1,8 @@
 import { initializeApp,getApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js";
-import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-database.js";
+import { getDatabase, child, get } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-database.js";
 
-import { getStorage } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-storage.js";
+import { getStorage,ref,listAll } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-storage.js";
 
 class authentication
 {
@@ -85,7 +85,7 @@ class database extends authentication
   constructor()
   {
     super();
-    this.dbRef = ref(getDatabase());
+    // this.dbRef = ref(getDatabase());
   }
   fetchdata = (name) =>
   {
@@ -105,11 +105,23 @@ class database extends authentication
     });
   }
   storageget = ()=>{
+    return new Promise((result, resolve)=>{
     // Initialize Cloud Storage and get a reference to the service
     const storage = getStorage(this.initapp);
-    const storageref = ref(storage,"new_anime");
-    console.log(storageref);
-  }
+    const storageref = ref(storage,"new_anime/");
+  listAll(storageref)
+  .then((res) => {
+    res.items.forEach((itemRef) => {
+    // All the items under listRef.
+    console.log(itemRef)
+    result(itemRef);
+    });
+  }).catch((error) => {
+  // Uh-oh, an error occurred!
+  resolve(error);
+  });
+  });
+}
 }
 class networking extends database
 {

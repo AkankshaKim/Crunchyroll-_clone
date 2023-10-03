@@ -31,10 +31,11 @@ if (currentpage.endsWith("/index.html"))
   //     console.log(error)
   //   });
   // });
-  const test = document.getElementById("test");
-  test.addEventListener("click",()=>{
-     nt.storageget();
-  })
+     nt.storageget().then((result)=>{
+      console.log(result.name);
+     }).catch((e)=>{
+      console.log(e)
+     });
 }
 
 else if(currentpage.endsWith("/login.html"))
