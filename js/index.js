@@ -7,17 +7,17 @@ var currentpage = window.location.href;
 
 if (currentpage.endsWith("/index.html"))
 {
-  // const ids = ["Death_note","Demon_Slayer","spy_family","horimiya","onepiece","madesama"];
-  // var trandinganime = document.getElementById("tradinganime").children;
-  // var i = 0;
-  // ids.forEach(element => {
-  //   nt.fetchdata(`availabe_shows/`+element+`/name`).then((result) => {
-  //     trandinganime[i].innerHTML = result;
-  //     i+=1;
-  //   }).catch((error) => {
-  //     console.log(error);
-  //   });
-  // });
+  const ids = ["Death_note","Demon_Slayer","spy_family","horimiya","onepiece","madesama"];
+  var trandinganime = document.getElementById("tradinganime").children;
+  var i = 0;
+  ids.forEach(element => {
+    nt.fetchdata(`availabe_shows/`+element+`/name`).then((result) => {
+      trandinganime[i].innerHTML = result;
+      i+=1;
+    }).catch((error) => {
+      console.log(error);
+    });
+  });
 
   // const new_animes = ["a_silent_voice","AOT","chibi_devi","code_geass","death_parade","free","fruit_basket","jujutsu_kaisen"];
   // var new_anime = document.getElementById("new_anime").children;
@@ -32,7 +32,7 @@ if (currentpage.endsWith("/index.html"))
   //   });
   // });
      nt.storageget().then((result)=>{
-      console.log(result.name);
+      document.getElementById("testimg").style.backgroundImage = "url("+result+")";
      }).catch((e)=>{
       console.log(e)
      });
