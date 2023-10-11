@@ -18,21 +18,14 @@ if (currentpage.endsWith("/index.html"))
       console.log(error);
     });
   });
-
-  // const new_animes = ["a_silent_voice","AOT","chibi_devi","code_geass","death_parade","free","fruit_basket","jujutsu_kaisen"];
-  // var new_anime = document.getElementById("new_anime").children;
-  // var a = 0;
-  // new_animes.forEach(element => {
-  //   nt.fetchdata(`availabe_shows/new_arrival/`+element+`/name`).then((result) => {
-  //     new_anime[a].innerHTML = result;
-  //     a+=1;
-
-  //   }).catch((error) => {
-  //     console.log(error)
-  //   });
-  // });
+  
      nt.storageget().then((result)=>{
-      document.getElementById("testimg").style.backgroundImage = "url("+result+")";
+      // document.getElementById("testimg").style.backgroundImage = "url("+result+")";
+      var idk = document.getElementById("testimg").children;
+      
+      idk[0].src = result;
+
+
      }).catch((e)=>{
       console.log(e)
      });

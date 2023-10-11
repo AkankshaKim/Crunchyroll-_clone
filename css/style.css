@@ -111,14 +111,15 @@ h4 {
     gap: 10px;
     padding-left: 150px;
     padding-right: 150px;
+    
 }
+
 .new_animes {
     flex: 1;
-    height: 200px;
+    height: 250px;
     width: 100px;
-    background-image: url();
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: gray;
+    overflow: hidden;
 }
 .hindi_dub {
     display: flex;

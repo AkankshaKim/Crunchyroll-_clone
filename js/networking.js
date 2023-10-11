@@ -104,37 +104,36 @@ class database extends authentication
       });
     });
   }
-  storageget = async ()=>{
+  storageget =  ()=>{
     return new Promise((result, resolve)=>{
     // Initialize Cloud Storage and get a reference to the service
     const storage = getStorage(this.initapp);
-    const storageref = sref(storage,"new_anime/");
+    const storageref =  sref(storage,"new_anime/");
+    let links = []
+    var i = 0
     listAll(storageref)
     .then((res) => {
-      //  result(res);   
-    res.items.forEach((itemRef) => {
+      
+      res.items.forEach((itemRef) => {
       // All the items under listRef.
-       getDownloadURL(sref(storage, itemRef.fullPath))
-    .then((url) => {
+    getDownloadURL(sref(storage, itemRef.fullPath)).then((url) => {
       // `url` is the download URL for 'images/stars.jpg'
       // This can be downloaded directly:
-      const xhr = new XMLHttpRequest();
+      const xhr = new  XMLHttpRequest();
       xhr.responseType = 'blob';
       xhr.onload = (event) => {
       const blob = xhr.response;
       };
       xhr.open('GET', url);
       xhr.send();
-
-    result(url)
-  })
-  .catch((error) => {
-    // Handle any errors
+      links.push(url)
+      result(url)
     });
-  });
+    });
     }).catch((error) => {
     resolve(error);
     });
+    // result(links)
     });
 }
 }
