@@ -20,11 +20,13 @@ if (currentpage.endsWith("/index.html"))
   });
   
      nt.storageget().then((result)=>{
-      // document.getElementById("testimg").style.backgroundImage = "url("+result+")";
-      var idk = document.getElementById("testimg").children;
-      
-      idk[0].src = result;
-
+      const idk = document.getElementById("new_anime").children;
+      i = 0;
+      while(i<6)
+      {
+        idk.item(i).children[0].src = result[i];
+        i+=1;
+      }
 
      }).catch((e)=>{
       console.log(e)
