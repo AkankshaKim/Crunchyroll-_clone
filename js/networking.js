@@ -94,33 +94,31 @@ class database extends authentication {
     });
   }
   storageget = () => {
-    return new Promise((result, resolve) => {
+    return new Promise((resolve, reject) => {
       // Initialize Cloud Storage and get a reference to the service
       const storage = getStorage(this.initapp);
       const storageref = sref(storage, "new_anime/");
-      let links = []
-      var i = 0
+      const links = [];
+  
       listAll(storageref).then((res) => {
-
-        res.items.forEach((itemRef) => {
-          // All the items under listRef.
-          getDownloadURL(sref(storage, itemRef.fullPath)).then((url) => {
-            // `url` is the download URL for 'images/stars.jpg'
-            // This can be downloaded directly:
-            const xhr = new XMLHttpRequest();
-            xhr.responseType = 'blob';
-            xhr.onload = (event) => {
-              const blob = xhr.response;
-            };
-            xhr.open('GET', url);
-            xhr.send();
-            links.push(url);
-            result(links);
+          const downloadPromises = res.items.map((itemRef) => {
+            return getDownloadURL(itemRef).then((url) => {
+              // Push the download URL to the array
+              links.push(url);
+            });
           });
+          // Wait for all download URLs to be retrieved
+          return Promise.all(downloadPromises);
+        })
+        .then(() => {
+          resolve(links);
+        })
+        .catch((error) => {
+          reject(error);
         });
-      });
     });
   }
+  
 }
 class networking extends database {
 }
