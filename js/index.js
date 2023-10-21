@@ -18,11 +18,51 @@ if (currentpage.endsWith("/index.html"))
       console.log(error);
     });
   });
+
+  const news_text = ["another","bleach","death_note","demon_slayer","spy_x_family"];
+  var news_box = document.getElementById("news_box").children;
+  var i = 0;
+  news_text.forEach(element => {
+    nt.fetchdata(`news_text/`+element+`/text`).then((result) => {
+      // console.log(news_box.item(i).children[1]);
+      console.log(result);
+      // news_box.item(i).children[1].innerHTML = result;
+      i+=1;
+    }).catch((error) => {
+      console.log(error);
+    });
+  });
   
-     nt.storageget().then((result)=>{
+     nt.storageget("new_anime").then((result)=>{
       const idk = document.getElementById("new_anime").children;
       i = 0;
       while(i<6)
+      {
+        idk.item(i).children[0].src = result[i];
+        i+=1;
+      }
+
+     }).catch((e)=>{
+      console.log(e)
+     });
+
+     nt.storageget("hindi_dub").then((result)=>{
+      const idk = document.getElementById("hindi_dub").children;
+      i = 0;
+      while(i<6)
+      {
+        idk.item(i).children[0].src = result[i];
+        i+=1;
+      }
+
+     }).catch((e)=>{
+      console.log(e)
+     });
+
+     nt.storageget("news").then((result)=>{
+      const idk = document.getElementById("news_box").children;
+      i = 0;
+      while(i<5)
       {
         idk.item(i).children[0].src = result[i];
         i+=1;

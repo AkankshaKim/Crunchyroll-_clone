@@ -93,11 +93,11 @@ class database extends authentication {
       });
     });
   }
-  storageget = () => {
+  storageget = (path) => {
     return new Promise((resolve, reject) => {
       // Initialize Cloud Storage and get a reference to the service
       const storage = getStorage(this.initapp);
-      const storageref = sref(storage, "new_anime/");
+      const storageref = sref(storage, path);
       const links = [];
   
       listAll(storageref).then((res) => {

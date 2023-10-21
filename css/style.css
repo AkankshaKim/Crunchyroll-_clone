@@ -130,9 +130,10 @@ h4 {
 }
 .hindi_dubs{
     flex: 1;
-    height: 200px;
+    height: 250px;
     width: 100px;
-    background-color: rgb(79, 18, 55);
+    background-color: gray;
+    overflow: hidden;
 }
 /* @media only screen and (max-width:700px) {
     body {background-color: red;}
@@ -171,6 +172,7 @@ h4 {
     width: 270px;
     /* margin-left:40px; */
     /* bottom: 120px; */
+    background-image: url(../images/death-parade-img.jpg);
     background-color: cornflowerblue;
 }
 /* wecome to demon school */
@@ -178,6 +180,7 @@ h4 {
     position: absolute;
     height: 150px;
     width: 270px;
+    background-image: url(../images/iruma-img.jpg);
     background-color: cornflowerblue;
     margin-left:40px; 
     bottom: 170px;
@@ -189,34 +192,30 @@ h4 {
     bottom: 10px;
     font-size: 18px;
 }
-
-.another{
+.news_box {
     display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
-
-/* another */
-.another-div {
-    height:70px;
-    width: 130px;
-    margin-left:40px; 
+.news{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    padding-right: 150px;
+    height : 110px;
+    margin-top: 5px;
     bottom: 170px;
-    background-color: palevioletred;
 }
-.another-text{
-    text-align:justify;
+.news-text{
+    text-align: justify;
     font-size: 18px; 
     margin-left:5%;
     overflow: hidden;
 }
-.another-box {
-    display: flex;
-    padding-left: 200px;
-    padding-right: 50px;
-    flex-direction: column;
-    gap: 10px;
-}
 .death-parade-x-another {
     display: flex;
+    flex-direction: row;
+    gap: 230px;
 }
 .last-page {
     display: flex;
