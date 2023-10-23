@@ -85,7 +85,7 @@ class database extends authentication {
           var value = snapshot.val();
           resolve(value);
         } else {
-          resolve("No data available");
+          reject("No data available");
         }
       }).catch((error) => {
         console.error(error);

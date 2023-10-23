@@ -15,15 +15,15 @@ if (currentpage.endsWith("/index.html")) {
       i += 1;
     })})
 
-  const news_text = ["another", "bleach", "death_note", "demon_slayer", "spy_x_family"];
+  const news_text = ["another","bleach","death_note","demon_slayer", "spy_x_family"];
   var news_box = document.getElementById("news_box").children;
-  var i = 0;
+  var a  = 0;
   news_text.forEach(element => {
+    console.log(element)
     nt.fetchdata(`news_text/` + element + `/text`).then((result) => {
-      // console.log(news_box.item(i).children[1])
-      console.log(result);
-      // news_box.item(i).children[1].innerHTML = result;
-      i += 1;
+      news_box.item(a).children[1].innerHTML  = result;
+      console.log(a)
+      a += 1;
     }).catch((error) => {
       console.log(error);
     });
@@ -61,7 +61,7 @@ if (currentpage.endsWith("/index.html")) {
     }
 
   }).catch((e) => {
-    console.log(e)
+    console.log(e);
   });
 }
 
@@ -82,8 +82,6 @@ else if (currentpage.endsWith("/sing.html")) {
     var email = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     nt.createuser(email, password);
-    const db = new database();
-    // db.fetchdata();
     location.replace("../index.html")
   });
 }
