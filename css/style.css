@@ -118,7 +118,7 @@ h4 {
     flex: 1;
     height: 250px;
     width: 100px;
-    background-color: gray;
+    background-color: black;
     overflow: hidden;
 }
 .hindi_dub {
@@ -132,7 +132,7 @@ h4 {
     flex: 1;
     height: 250px;
     width: 100px;
-    background-color: gray;
+    background-color: black;
     overflow: hidden;
 }
 /* @media only screen and (max-width:700px) {
