@@ -85,3 +85,44 @@ else if (currentpage.endsWith("/sing.html")) {
     location.replace("../index.html")
   });
 }
+
+else if (currentpage.endsWith("/admin_singup.html")) {
+  siginbtn.addEventListener("click", () => {
+    var email = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    nt.createuser(email, password);
+    location.replace("../admin.html")
+  });
+}
+// admin_panel
+
+const image = document.getElementById("image");
+
+image.addEventListener("change", function() {
+  const selectedImages = image.files;
+  for (let i = 0; i < selectedImages.length; i++) {
+    const image = selectedImages[i];
+    console.log("Selected Image: " + image.name);
+  }
+});
+
+
+
+document.getElementById("image").addEventListener("submit", function (event) {
+  event.preventDefault();
+  const formData = new FormData();
+  const imageFile = document.getElementById("imageFile").files[0];
+  formData.append("imageFile", imageFile);
+
+  fetch("gs://crunchyroll-clone-c8501.appspot.com/uploaded _images", {
+      method: "POST",
+      body: formData,
+  })
+      .then((response) => response.json())
+      .then((data) => {
+          console.log(data);
+      })
+      .catch((error) => {
+          console.error("Error uploading image: " + error);
+      });
+});
