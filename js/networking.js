@@ -1,7 +1,6 @@
 import { initializeApp, getApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js";
 import { getDatabase, ref as dbref, child, get } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-database.js";
-
 import { getStorage, ref as sref, listAll, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-storage.js";
 
 class authentication {
@@ -43,10 +42,10 @@ class authentication {
 
   createuser = (email, password) => {
     createUserWithEmailAndPassword(this.auth, email, password).then((userCredential) => {
-      // Signed in 
+      
       const user = userCredential.user;
       alert("account created");
-      // ...
+      
     }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -56,9 +55,30 @@ class authentication {
       else if (errorCode == "auth/network-request-failed") {
         alert("check your internet connection");
       }
-      // ..
+      
     });
   }
+
+  // admincheckuser = (email, password) => {
+  //   signInWithEmailAndPassword(this.auth, email, password).then((userCredential) => {
+      
+  //     const user = userCredential.user;
+      
+  //     alert("everthing good");
+      
+  //   }).catch((error) => {
+  //     const errorCode = error.code;
+  //     const errorMessage = error.message;
+  //     if (errorCode == "auth/network-request-failed") {
+  //       alert("check your internet connection");
+  //     }
+  //     else {
+  //       alert("check your email or password");
+
+  //     }
+
+  //   });
+  // }
 
   userstatus = (user) => {
     return new Promise((ressolve, reject) => {
